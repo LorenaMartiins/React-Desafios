@@ -12,12 +12,13 @@ import AddIcon from '@material-ui/icons/Add';
 import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Perfil from './img/perfil.jpg';
 
 function Header() {
   return (
     <div className="header">
       <div className="header_esquerda">
-        <img src='https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png'></img>
+        <img src='https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png' alt=''></img>
         <div className="header_input">
           <SearchIcon/>
           <input className=""></input>
@@ -26,19 +27,19 @@ function Header() {
 
       <div className="header_centro">
 
-        <div className='header_options'>
+        <div className='header_option'>
           <HomeIcon fontSize="large"/>
         </div>
-        <div className='header_options'>
+        <div className='header_option'>
           <FlagIcon fontSize="large"/>
         </div>
-        <div className='header_options'>
+        <div className='header_option'>
           <SubscriptionsOutlinedIcon fontSize="large"/>
         </div>
-        <div className='header_options'>
+        <div className='header_option'>
           <StorefrontOutlinedIcon fontSize="large"/>
         </div>
-        <div className='header_options'>
+        <div className='header_option'>
           <SupervisedUserCircleIcon fontSize="large"/>
         </div>
 
@@ -46,14 +47,13 @@ function Header() {
 
       <div className="header_direita">
         <div className="header_info">
-          <Avatar/>
-          <h4>Nazaré</h4>
+          <Avatar src={Perfil}/>
+          <h4>Lorena</h4>
         </div>
         <IconButton><AddIcon/></IconButton>
         <IconButton><ForumIcon/></IconButton>
         <IconButton><NotificationsActiveIcon/></IconButton>
         <IconButton><ExpandMoreIcon/></IconButton>
-
       </div>
     </div>
   )
