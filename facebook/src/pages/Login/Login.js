@@ -20,7 +20,7 @@ export default function Login(){
     }
 
     if(estado == true){
-      console.log("/face")
+      navigate("/face")
     }
   }
 
@@ -35,7 +35,7 @@ export default function Login(){
         
         <input type="password" name="i_senha" placeholder="Senha" className="i_text" required onChange={(event) => {setLoginSenha(event.target.value);}}/>
 
-        <button onClick={entrar} className="btt_form">Entrar</button>
+        <button onClick={entrar} type="button" className="btt_form">Entrar</button>
 
         <p className="traco"> </p>
         <p> Não tem conta? <Link to="/cadastro">Cadastre-se</Link></p>

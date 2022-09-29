@@ -22,7 +22,7 @@ export default function Cadastro(){
         <input placeholder="Nome..." onChange={(event) => {setNewNome(event.target.value);}}/>
         <input placeholder="email..." onChange={(event) => {setNewEmail(event.target.value);}}/>
         <input type="password" placeholder="Senha..." onChange={(event) => {setNewSenha(event.target.value);}}/>
-        <button className="btt_form-cad" onClick={registrar}>Resgistrar</button>
+        <button className="btt_form-cad" type="button" onClick={registrar}>Resgistrar</button>
       </form>
       <button className="btn btn-danger" onClick={signInWithGoogle}>Resgistrar com google</button>
       <Link to="/" className="volte">Volte</Link>
