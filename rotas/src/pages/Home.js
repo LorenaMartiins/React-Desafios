@@ -1,4 +1,4 @@
-import { getDocs, collection, doc, where, query, deleteDoc, addDoc } from 'firebase/firestore';
+import { getDocs, collection, doc, where, query, deleteDoc, addDoc, updateDoc } from 'firebase/firestore';
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../component/Header'
@@ -10,6 +10,7 @@ export default function Home() {
   //insert 
   const [newNome, setNewNome] = useState("");
   const [newSenha, setNewSenha] = useState(0);
+  const [id, setId] = useState("")
 
   const createUser = async () =>{
     await addDoc(userCollection, {nome: newNome, senha: Number(newSenha)})
@@ -28,22 +29,40 @@ export default function Home() {
     getUsers()
   }, []);
 
+  //Delete
   const deleteUser = async(id)=>{
     const userDoc = doc(db, "usuario", id)
     await deleteDoc(userDoc);
   }
 
+  // Update
+  const updateUser = async() => {
+    const userDoc = doc(db, "usuario", id)
+    await updateDoc(userDoc, {senha:Number(newSenha)})
+    console.log('teste')
+  }
+
   return (
     <div className="container">
       <Header/>
-      {/* insert */}
+      {/* === insert === */}
+      <h1>Home</h1>
+      <br/>
       <input placeholder="nome..." onChange={(event) => {setNewNome(event.target.value);}}/>
       <br/>
       <input type="number" placeholder="senha..." onChange={(event) => {setNewSenha(event.target.value);}}/>
       <br/>
       <button onClick={createUser} className="btn btn-success m-2">Novo Usuario</button>
 
-      <h1>Home</h1>
+
+      {/* === update === */}
+      <h4>Atualizar</h4>
+      <input placeholder="id" onChange={(event) => {setId(event.target.value);}}/>
+      <br/>
+      <input type="number" placeholder="senha..." onChange={(event) => {setNewSenha(event.target.value);}}/>
+      <br/>
+      <button onClick={() => {updateUser()}} className="btn btn-warning m-2">Atualizar</button>
+
       {/* === get === */}
       {users.map((user) => {
         return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Routes, BrowserRouter} from 'react-router-dom'
-import About from './pages/About'
 import Home from './pages/Home'
+import SignIn from './pages/SignIn'
 import User from './pages/User'
 
 export default function Rotas() {
@@ -10,7 +10,7 @@ export default function Rotas() {
       <Routes>
         <Route path='/user' element={<User/>}/>
         <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
+        <Route path='/signin' element={<SignIn/>}/>
       </Routes>
     </BrowserRouter>
   )

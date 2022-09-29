@@ -1,16 +1,10 @@
 import './App.css';
-import Header from './Header';
-import Siderbar from './Siderbar';
-import Feed from './components/Feed/Feed'
+import Rotas from './routes';
 
 function App() {
   return (
     <div className="App">
-     <Header/>
-     <div className="appBody"> 
-        <Siderbar/>
-        <Feed/>
-     </div>
+      <Rotas/>
     </div>
   );
 }
